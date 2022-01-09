@@ -163,19 +163,19 @@ while True:
     except (KeyboardInterrupt, SystemExit):
         cleanAndExit()
 ```
-* 第8行，參考單位，之後在校準的時候需要進行調整
+* 第8行：參考單位，之後在校準的時候需要進行調整
 
 ![](https://i.imgur.com/ZRrdSCJ.png)
 
-* 第25行，宣告一個HX711的物件，括號裡第一個參數是DT的腳位，第二個是SCK的腳位
+* 第25行：宣告一個HX711的物件，括號裡第一個參數是DT的腳位，第二個是SCK的腳位
 
 ![](https://i.imgur.com/JRKvqek.png)
 
-* 54~76行，執行無限迴圈，以`val`變數不停取得秤得的重量並列印出來
+* 54~76行：執行無限迴圈，以`val`變數不停取得秤得的重量並列印出來
 
 ![](https://i.imgur.com/KT0O02I.png)
 
-* 78、79行，此無限迴圈的終止條件，當收到exception時，迴圈會break掉
+* 78、79行：此無限迴圈的終止條件，當收到exception時，迴圈會break掉
 
 ![](https://i.imgur.com/xj8dnc6.png)
 
@@ -399,22 +399,19 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0', port=port)
 ```
 ### 模板解釋
-* 13、14行中要改成自己的Channel Access token以及Channel Secret（Channel Access token在Messaging API，Channel Secret在Basic settings）
+* 13、14行：要改成自己的Channel Access token以及Channel Secret（Channel Access token在Messaging API，Channel Secret在Basic settings）
 
 ![](https://i.imgur.com/u88h2LJ.png)
 
-* 16~26行
-指定在 /callback 通道上接收訊息，方法是 POST而callback()是為了要檢查連線是否正常其中`signature`是LINE官方提供用來檢查該訊息是否透過LINE官方APP傳送而`body`就是用戶傳送的訊息，並且是以JSON的格式傳送
+* 16~26行：指定在 /callback 通道上接收訊息，方法是 POST而callback()是為了要檢查連線是否正常其中`signature`是LINE官方提供用來檢查該訊息是否透過LINE官方APP傳送而`body`就是用戶傳送的訊息，並且是以JSON的格式傳送
 
 ![](https://i.imgur.com/NNAOc72.png)
 
-* 28~35行
-這邊是用來接收訊息的地方特別注意到第35行的line_bot_api.reply_message()，它是回傳訊息的方法，而我們設定回傳的型態是文字(text)
+* 28~35行：這邊是用來接收訊息的地方，特別注意到第35行的line_bot_api.reply_message()，它是回傳訊息的方法，而我們設定回傳的型態是文字(text)
 
 ![](https://i.imgur.com/f7MBiLP.png)
 
-* 37~40行
-這裡是指定我們的BOT執行的位置是在 `0.0.0.0:80`，接上前面所說的，我們的BOT會接收訊息的位置也就是`0.0.0.0:80/callback`
+* 37~40行：這裡是指定我們的BOT執行的位置是在 `0.0.0.0:80`，接上前面所說的，我們的BOT會接收訊息的位置也就是`0.0.0.0:80/callback`
 
 ![](https://i.imgur.com/8jbPrc3.png)
 
