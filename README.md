@@ -275,7 +275,7 @@ LINE Messaging API也是一樣，我們只需要將我們希望回覆的訊息�
 #### STEP 2 ： 新增Providers
 在登入LINE Developers之後會看到類似這樣的介面
 ![](https://i.imgur.com/HvyWuao.png)
-接著在Providers的部分點擊create，輸入Providers name，可以隨意取自己想要的名字
+接著在Providers的部分點擊Create，輸入Providers name，可以隨意取自己想要的名字
 
 ![](https://i.imgur.com/Tih0u1K.png)
 
@@ -438,7 +438,7 @@ if __name__ == "__main__":
 
 ![](https://i.imgur.com/W0PDiqw.png)
 
-你會發現現在我們有一個在0.0.0.0:80 上跑的python還有一個會將訊息導向localhost:80 上的webhook我們現在只需要讓LINE 知道我們的webhook在哪裡就完成了!
+你會發現現在我們有一個在0.0.0.0:80 上跑的python還有一個會將訊息導向localhost:80 上的webhook我們現在只需要讓LINE知道我們的webhook在哪裡就完成了!
 #### STEP 8 ： Webhook設定
 1. 回到Messaging API畫面
 2. 在Webhook URL的地方點擊Edit按鈕
@@ -614,6 +614,8 @@ if __name__ == "__main__":
 * [HX711 NTD1(Connected with LINE BOT)](https://youtu.be/zMhlQMEvxwI)
     * Calculate the number and price of NTD1(control by LINE BOT)
     * `linebot_1.py`
+## 遇到的困難
+這次的IoT Project遇到的最大困難點是在連接HX711的線路，因為沒有焊槍與插座的關係，導致所有線路只能用膠帶黏貼，為了確保線路不要接觸不良，光是在線路串接與測試穩不穩定的部分就花掉了1/3的時間，前前後後拆掉又黏上膠帶的次數不下20次。不過，這還並沒有解決問題，連接A/D轉換器與RPi之間的線路即使用了3M的膠帶纏繞了快10圈，還是沒辦法確保在沒有人為力量干預的情況下保持暢通，無奈之下，只好以手部按壓的方式來替代膠帶固定的功能。然而，因為本專案需要4個A/D轉換器，這也意味著要一次用手固定住，只要施加的力道與角度稍微不對，導致16個接觸點有1處沒接觸好，就沒辦法跑出正常的成果，因此，在沒有2個人以上的幫忙與耗時冗長的debug環節下，無法拍出整合的、串聯1元5元10元50元的功能展示影片，但相信程式碼是沒有問題的，有興趣的可以看`main.py`與`linebot_main.py`。所以，在demo影片中僅展示了1元5元10元50元各自的功能，也遺憾沒辦法做出原本設想的「領錢」功能。
 ## Reference
 [HX711 Python Library](https://github.com/tatobari/hx711py)\
 [Build a digital Raspberry Pi Scale (with Weight Sensor HX711)](https://tutorials-raspberrypi.com/digital-raspberry-pi-scale-weight-sensor-hx711/)\
