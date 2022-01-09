@@ -165,18 +165,23 @@ while True:
 ```
 * 第8行
 參考單位，之後在校準的時候需要進行調整
+
 ![](https://i.imgur.com/ZRrdSCJ.png)
+
 * 第25行
 宣告一個HX711的物件，括號裡第一個參數是DT的腳位，第二個是SCK的腳位
+
 ![](https://i.imgur.com/JRKvqek.png)
+
 * 54~76行
 執行無限迴圈，以`val`變數不停取得秤得的重量並列印出來
+
 ![](https://i.imgur.com/KT0O02I.png)
+
 * 78、79行
 此無限迴圈的終止條件，當收到exception時，迴圈會break掉
+
 ![](https://i.imgur.com/xj8dnc6.png)
-
-
 
 ### STEP 4：進行校準
 * clone完之後變更到hx711py資料夾目錄
@@ -421,7 +426,7 @@ if __name__ == "__main__":
 2. 移動路徑到資料夾中
 3. 下`ngrok.exe http 80`指令
 4. 按下enter
-5. 
+
 ![](https://i.imgur.com/MFHzEMb.png)
 
 5. 開啟另一個cmd
@@ -435,6 +440,7 @@ if __name__ == "__main__":
 ![](https://i.imgur.com/MnY6SzI.png)
 
 ![](https://i.imgur.com/W0PDiqw.png)
+
 你會發現現在我們有一個在0.0.0.0:80 上跑的python還有一個會將訊息導向localhost:80 上的webhook我們現在只需要讓LINE 知道我們的webhook在哪裡就完成了!
 ### STEP 7 ： Webhook設定
 1. 回到Messaging API畫面
