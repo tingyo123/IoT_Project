@@ -4,7 +4,7 @@
 
 ---
 ## Introduction
-piggy ban
+piggy banky是一個神奇的零錢筒，把你的零錢灑進他的肚子裡，他可以告訴你有多少錢喔!
 ## Components
 ### Hardware
 * Raspberry Pi Model 3B *1
@@ -399,14 +399,10 @@ if __name__ == "__main__":
 指定在 /callback 通道上接收訊息，方法是 POST而callback()是為了要檢查連線是否正常其中`signature`是LINE官方提供用來檢查該訊息是否透過LINE官方APP傳送而`body`就是用戶傳送的訊息，並且是以JSON的格式傳送
 ![](https://i.imgur.com/NNAOc72.png)
 * 28~35行
-這邊是用來接收訊息的地方
-特別注意到第35行的line_bot_api.reply_message()
-它是回傳訊息的方法，而我們設定回傳的型態是文字(text)
+這邊是用來接收訊息的地方特別注意到第35行的line_bot_api.reply_message()，它是回傳訊息的方法，而我們設定回傳的型態是文字(text)
 ![](https://i.imgur.com/f7MBiLP.png)
 * 37~40行
-這裡是指定我們的BOT執行的位置
-是在 `0.0.0.0:80`
-接上前面所說的，我們的BOT會接收訊息的位置也就是`0.0.0.0:80/callback`
+這裡是指定我們的BOT執行的位置是在 `0.0.0.0:80`，接上前面所說的，我們的BOT會接收訊息的位置也就是`0.0.0.0:80/callback`
 ![](https://i.imgur.com/8jbPrc3.png)
 ### STEP 6 ： 執行test.py檔
 點擊右上角的三角形按鈕
