@@ -163,23 +163,19 @@ while True:
     except (KeyboardInterrupt, SystemExit):
         cleanAndExit()
 ```
-* 第8行
-參考單位，之後在校準的時候需要進行調整
+* 第8行，參考單位，之後在校準的時候需要進行調整
 
 ![](https://i.imgur.com/ZRrdSCJ.png)
 
-* 第25行
-宣告一個HX711的物件，括號裡第一個參數是DT的腳位，第二個是SCK的腳位
+* 第25行，宣告一個HX711的物件，括號裡第一個參數是DT的腳位，第二個是SCK的腳位
 
 ![](https://i.imgur.com/JRKvqek.png)
 
-* 54~76行
-執行無限迴圈，以`val`變數不停取得秤得的重量並列印出來
+* 54~76行，執行無限迴圈，以`val`變數不停取得秤得的重量並列印出來
 
 ![](https://i.imgur.com/KT0O02I.png)
 
-* 78、79行
-此無限迴圈的終止條件，當收到exception時，迴圈會break掉
+* 78、79行，此無限迴圈的終止條件，當收到exception時，迴圈會break掉
 
 ![](https://i.imgur.com/xj8dnc6.png)
 
@@ -280,9 +276,10 @@ Messenging API 讓指定的 JSON格式檔案 可以在我們的 BOT Server 及 L
 ### STEP 2 ： 新增Providers
 在登入LINE Developers之後會看到類似這樣的介面
 ![](https://i.imgur.com/HvyWuao.png)
-接著在Providers的部分點擊create
-輸入Providers name，可以隨意取自己想要的名字
+接著在Providers的部分點擊create，輸入Providers name，可以隨意取自己想要的名字
+
 ![](https://i.imgur.com/Tih0u1K.png)
+
 輸入完畢後按下Create
 ### STEP 3 ： 新增Messaging API channel 
 點擊第二個「Create a Messaging API channel」
@@ -311,7 +308,9 @@ Messenging API 讓指定的 JSON格式檔案 可以在我們的 BOT Server 及 L
 ### STEP 2 ： 按右上角「設定」
 ![](https://i.imgur.com/XtV3fHm.png)
 ### STEP 3 ： 選擇左側的回應設定
+
 ![](https://i.imgur.com/R2sIXRO.png)
+
 將進階設定中的Webhook勾選啟用並將自動回覆訊息改為停用
 ![](https://i.imgur.com/SsWgYQj.png)
 ### 下載Python套件
@@ -336,7 +335,9 @@ LINE官方在Python方面有提供line-bot-sdk套件，我們還需要flask套�
 ## LINE BOT Implementation
 ### Coding
 ### STEP 1 ： 在D槽建立一個資料夾
+
 ![](https://i.imgur.com/HQWrHRp.png)
+
 名稱可以隨意取，在這裡我們取作linebotTest
 ### STEP 2 ： 複製ngrok執行檔（ngrok.exe）到與資料夾同一層的路徑中
 ![](https://i.imgur.com/QdLGkcH.png)
@@ -442,7 +443,7 @@ if __name__ == "__main__":
 ![](https://i.imgur.com/W0PDiqw.png)
 
 你會發現現在我們有一個在0.0.0.0:80 上跑的python還有一個會將訊息導向localhost:80 上的webhook我們現在只需要讓LINE 知道我們的webhook在哪裡就完成了!
-### STEP 7 ： Webhook設定
+### STEP 8 ： Webhook設定
 1. 回到Messaging API畫面
 2. 在Webhook URL的地方點擊Edit按鈕
 3. 改成在ngrok.exe上看到的網址（第二個Forwarding，複製到ngrok.io為止）
@@ -450,9 +451,11 @@ if __name__ == "__main__":
 ![](https://i.imgur.com/Umk5PKd.png)
 
 點擊Update跟Verify後應該會出現Success
+
 ![](https://i.imgur.com/DlOlXuy.png)
+
 這樣我們的鸚鵡式LINE機器人就建立成功拉
-### STEP 8 ： 把機器人加入好友並測試
+### STEP 9 ： 把機器人加入好友並測試
 1. 滑到Messaging API的上方
 2. 輸入ID或掃QR code將機器人加入好友
 3. 輸入你想說的話
