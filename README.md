@@ -1,7 +1,6 @@
 # IOT Project — Piggy Banky
 ![](https://i.imgur.com/WI3YCCB.jpg)
 
-
 ---
 ## Introduction
 piggy banky是一個神奇的零錢筒，把你的零錢灑進他的肚子裡，他可以告訴你有多少錢喔!
@@ -595,6 +594,10 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0', port=port)
 ```
 ### [VIDEO](https://youtu.be/zMhlQMEvxwI)
+## What Piggy Banky Looks Like
+
+![](https://i.imgur.com/aaa3W27.jpg)
+
 ## Demo Video
 * [HX711 NTD50](https://youtu.be/f4cXLr8uTT8)
     * Calculate the number and price of NTD50 
