@@ -265,8 +265,8 @@ while True:
 ### LINE Messaging API
 API(Application Programming Interface)規範了多個程式之間互動的方式，你只需要透過其規範的使用方式，他就會依照設定的功能回覆，不需要了解他是怎麼實作的就可以運用
 
-LINE Messaging API也是一樣，我們只需要將我們希望回覆的訊息格式以及內容以特定的JSON格式回覆給API，它就會將這則訊息傳給用戶
-Messenging API 讓指定的 JSON格式檔案 可以在我們的 BOT Server 及 LINE Platform 之間以HTTPS的方式傳遞
+LINE Messaging API也是一樣，我們只需要將我們希望回覆的訊息格式以及內容以特定的JSON格式回覆給API，它就會將這則訊息傳給用戶。Messenging API 讓指定的 JSON格式檔案 可以在我們的 BOT Server 及 LINE Platform 之間以HTTPS的方式傳遞
+
 ![](https://i.imgur.com/HNSF1YQ.png)
 ### LINE BOT Setup
 #### STEP 1 ： 前往[LINE Developers](https://developers.line.biz/en/)創建與登入LINE帳號
