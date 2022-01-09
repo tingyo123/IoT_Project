@@ -37,8 +37,8 @@ piggy banky是一個神奇的零錢筒，把你的零錢灑進他的肚子裡，
 ![](https://i.imgur.com/FS7fggm.png)
 
 ## Setup and Installation
-## HX711 Module
-### STEP 1 ： HX711模組組裝
+### HX711 Module
+#### STEP 1 ： HX711模組組裝
 ![](https://i.imgur.com/2PAksr1.png)
 [ImageSource](https://www.taiwaniot.com.tw/product/hx711%e6%a8%a1%e7%b5%845kg%e5%a3%93%e5%8a%9b%e6%84%9f%e6%b8%ac%e5%99%a8arduino%e5%a5%97%e4%bb%b6%e7%b5%84-%e7%a7%a4%e9%87%8d%e6%84%9f%e6%b8%ac%e5%99%a8-arduino%e9%9b%bb%e5%ad%90%e7%a7%a4%e6%a8%a1/)
 1. 24位A/D轉換器，接收壓力感測器的電訊號，並轉為數字訊號
@@ -51,7 +51,7 @@ piggy banky是一個神奇的零錢筒，把你的零錢灑進他的肚子裡，
 
 ![](https://i.imgur.com/TaXzUzw.jpg)
 > 注意：上下秤盤與壓力感測器間必須用塑膠墊片間隔，且秤盤必須栓在壓力感測器的兩側，這樣才能讓壓力感測器產生旋轉的力矩並反應出微小的變形，進而測得物體的重量
-### STEP 2：24位A/D轉換器線路連接
+#### STEP 2：24位A/D轉換器線路連接
 ![](https://i.imgur.com/0XfTFeK.png)
 [ImageSource](https://circuitjournal.com/four-wire-load-cell-with-HX711)
 * 24位A/D轉換器與壓力感測器
@@ -73,7 +73,7 @@ piggy banky是一個神奇的零錢筒，把你的零錢灑進他的肚子裡，
 
 > 注意：VCC可接在Raspberry Pi上3.3V的腳位，DT與SCK也可接在其他GPIO的腳位（避免接在有特殊功能的GPIO腳位，如GPIO 2、GPIO 3，會造成執行時終端機卡住）
 
-### STEP 3：找一個合適的HX711 Python Library
+#### STEP 3：找一個合適的HX711 Python Library
 ![](https://i.imgur.com/R6R6rk7.png)
 
 [ImageSource](https://github.com/tatobari/hx711py)
@@ -81,7 +81,7 @@ piggy banky是一個神奇的零錢筒，把你的零錢灑進他的肚子裡，
 ```
 git clone https://github.com/tatobari/hx711py
 ```
-### 範例介紹(example.py檔)
+#### 範例介紹(example.py檔)
 ```
 #! /usr/bin/python2
 
@@ -179,7 +179,7 @@ while True:
 
 ![](https://i.imgur.com/xj8dnc6.png)
 
-### STEP 4：進行校準
+#### STEP 4：進行校準
 * clone完之後變更到hx711py資料夾目錄
 ```
 cd hx711py
@@ -210,7 +210,7 @@ sudo python3 example.py
 可以看到秤盤上沒東西時，重量差不多為0g，放上新台幣50元後，重量變為10g左右。到這個階段HX711模組的設置就完成了，接下來可以依自身需求寫程式應用啦!
 > 注意：一、若執行時終端機卡住，可能是py檔裡DT或SCK的腳位設定錯誤。二、若執行後，終端機print出的數字亂跳，或是一直為0.0，很可能是線路接觸不良導致。三、此HX711模組校準後的精度在1g內，有些許誤差皆屬正常。
 
-## 應用—精準測得新台幣硬幣的個數與回報金額(以1元為例)
+### 應用—精準測得新台幣硬幣的個數與回報金額(以1元為例)
 ```
 import time
 import sys
@@ -261,7 +261,7 @@ while True:
     except (KeyboardInterrupt, SystemExit):
         cleanAndExit()
 ```
-## [VIDEO](https://youtu.be/DPkNIDD49mc)
+### [VIDEO](https://youtu.be/DPkNIDD49mc)
 ## LINE BOT
 ### LINE Messaging API
 API(Application Programming Interface)規範了多個程式之間互動的方式，你只需要透過其規範的使用方式，他就會依照設定的功能回覆，不需要了解他是怎麼實作的就可以運用
@@ -270,10 +270,10 @@ LINE Messaging API也是一樣，我們只需要將我們希望回覆的訊息�
 Messenging API 讓指定的 JSON格式檔案 可以在我們的 BOT Server 及 LINE Platform 之間以HTTPS的方式傳遞
 ![](https://i.imgur.com/HNSF1YQ.png)
 ### LINE BOT Setup
-### STEP 1 ： 前往[LINE Developers](https://developers.line.biz/en/)創建與登入LINE帳號
+#### STEP 1 ： 前往[LINE Developers](https://developers.line.biz/en/)創建與登入LINE帳號
 ![](https://i.imgur.com/0ydvDuN.jpg)
 右上角點擊Log in
-### STEP 2 ： 新增Providers
+#### STEP 2 ： 新增Providers
 在登入LINE Developers之後會看到類似這樣的介面
 ![](https://i.imgur.com/HvyWuao.png)
 接著在Providers的部分點擊create，輸入Providers name，可以隨意取自己想要的名字
@@ -281,10 +281,10 @@ Messenging API 讓指定的 JSON格式檔案 可以在我們的 BOT Server 及 L
 ![](https://i.imgur.com/Tih0u1K.png)
 
 輸入完畢後按下Create
-### STEP 3 ： 新增Messaging API channel 
+#### STEP 3 ： 新增Messaging API channel 
 點擊第二個「Create a Messaging API channel」
 ![](https://i.imgur.com/jZTxBhc.png)
-### STEP 4 ： 修改基本資料
+#### STEP 4 ： 修改基本資料
 * Channel name
 ![](https://i.imgur.com/hVQuYSJ.png)
 * Channel description
@@ -295,19 +295,19 @@ Messenging API 讓指定的 JSON格式檔案 可以在我們的 BOT Server 及 L
 ![](https://i.imgur.com/oZvxJKR.png)
 * Email address
 ![](https://i.imgur.com/CcPzE4R.png)
-### STEP 5 ： 勾選同意政策並點擊Create
+#### STEP 5 ： 勾選同意政策並點擊Create
 ![](https://i.imgur.com/nA53EXq.png)
 ### 產生Access token
-### STEP 1 ： 回到Messaging API
+#### STEP 1 ： 回到Messaging API
 ![](https://i.imgur.com/PBx2A9x.png)
-### STEP 2 ： 滑到最下面找到 Channel access token 並點擊 issue
+#### STEP 2 ： 滑到最下面找到 Channel access token 並點擊 issue
 ![](https://i.imgur.com/VgxdCDi.png)
 ### 啟用webhook
-### STEP 1 ： 前往[Line Manager](https://manager.line.biz/)選擇剛剛新增的BOT
+#### STEP 1 ： 前往[Line Manager](https://manager.line.biz/)選擇剛剛新增的BOT
 ![](https://i.imgur.com/mMMhm6f.png)
-### STEP 2 ： 按右上角「設定」
+#### STEP 2 ： 按右上角「設定」
 ![](https://i.imgur.com/XtV3fHm.png)
-### STEP 3 ： 選擇左側的回應設定
+#### STEP 3 ： 選擇左側的回應設定
 
 ![](https://i.imgur.com/R2sIXRO.png)
 
@@ -316,35 +316,35 @@ Messenging API 讓指定的 JSON格式檔案 可以在我們的 BOT Server 及 L
 ### 下載Python套件
 LINE官方在Python方面有提供line-bot-sdk套件，我們還需要flask套件
 
-### STEP 1 ： win+R開啟cmd
-### STEP 2 ： 輸入下方指令
+#### STEP 1 ： win+R開啟cmd
+#### STEP 2 ： 輸入下方指令
 `pip3 install line-bot-sdk flask`
 ### 下載Visual Studio Code
-### STEP 1 ： 前往[VScode](https://code.visualstudio.com/)下載windows版本
+#### STEP 1 ： 前往[VScode](https://code.visualstudio.com/)下載windows版本
 ![](https://i.imgur.com/kXo0gjE.png)
-### STEP 2 ： 下載Python套件
+#### STEP 2 ： 下載Python套件
 1. 下載完VScode後開啟
 2. 點擊左側四個正方形的Extentions
 3. 搜尋Python並下載
 
 ![](https://i.imgur.com/jbBj5OY.png)
 ### 下載ngrok 
-### STEP 1 ： 前往[ngrok](https://ngrok.com/download)官網下載windows版本
+#### STEP 1 ： 前往[ngrok](https://ngrok.com/download)官網下載windows版本
 ![](https://i.imgur.com/f7zH69f.png)
 這樣一來我們的設定就完成拉
 ## LINE BOT Implementation
 ### Coding
-### STEP 1 ： 在D槽建立一個資料夾
+#### STEP 1 ： 在D槽建立一個資料夾
 
 ![](https://i.imgur.com/HQWrHRp.png)
 
 名稱可以隨意取，在這裡我們取作linebotTest
-### STEP 2 ： 複製ngrok執行檔（ngrok.exe）到與資料夾同一層的路徑中
+#### STEP 2 ： 複製ngrok執行檔（ngrok.exe）到與資料夾同一層的路徑中
 ![](https://i.imgur.com/QdLGkcH.png)
 
-### STEP 3 ： 回到VScode
+#### STEP 3 ： 回到VScode
 ![](https://i.imgur.com/yJRBODu.png)
-### STEP 4 ： 開啟資料夾
+#### STEP 4 ： 開啟資料夾
 1. 點擊左上角的File
 2. 選擇Open Folder
 3. 點選剛剛建立的linebotTest資料夾
@@ -355,7 +355,7 @@ LINE官方在Python方面有提供line-bot-sdk套件，我們還需要flask套�
 5. 建立test.py檔(名稱可自取)
 
 ![](https://i.imgur.com/cYMmsV1.png)
-### STEP 5 ： 套模板
+#### STEP 5 ： 套模板
 ```
 from flask import Flask, request, abort
 from linebot import (
@@ -398,7 +398,7 @@ if __name__ == "__main__":
     port = int(os.environ.get('PORT', 80))
     app.run(host='0.0.0.0', port=port)
 ```
-### 模板解釋
+#### 模板解釋
 * 13、14行：要改成自己的Channel Access token以及Channel Secret（Channel Access token在Messaging API，Channel Secret在Basic settings）
 
 ![](https://i.imgur.com/u88h2LJ.png)
@@ -415,11 +415,11 @@ if __name__ == "__main__":
 
 ![](https://i.imgur.com/8jbPrc3.png)
 
-### STEP 6 ： 執行test.py檔
+#### STEP 6 ： 執行test.py檔
 點擊右上角的三角形按鈕
 ![](https://i.imgur.com/BOpFOiY.png)
 這樣一來，我們就已經完成鸚鵡的功能了，在第35行的位置
-### STEP 7 ： 進行實作
+#### STEP 7 ： 進行實作
 1. 開啟cmd
 2. 移動路徑到資料夾中
 3. 下`ngrok.exe http 80`指令
@@ -440,7 +440,7 @@ if __name__ == "__main__":
 ![](https://i.imgur.com/W0PDiqw.png)
 
 你會發現現在我們有一個在0.0.0.0:80 上跑的python還有一個會將訊息導向localhost:80 上的webhook我們現在只需要讓LINE 知道我們的webhook在哪裡就完成了!
-### STEP 8 ： Webhook設定
+#### STEP 8 ： Webhook設定
 1. 回到Messaging API畫面
 2. 在Webhook URL的地方點擊Edit按鈕
 3. 改成在ngrok.exe上看到的網址（第二個Forwarding，複製到ngrok.io為止）
@@ -452,7 +452,7 @@ if __name__ == "__main__":
 ![](https://i.imgur.com/DlOlXuy.png)
 
 這樣我們的鸚鵡式LINE機器人就建立成功拉
-### STEP 9 ： 把機器人加入好友並測試
+#### STEP 9 ： 把機器人加入好友並測試
 1. 滑到Messaging API的上方
 2. 輸入ID或掃QR code將機器人加入好友
 3. 輸入你想說的話
@@ -460,28 +460,28 @@ if __name__ == "__main__":
 ![](https://i.imgur.com/JDijgIq.jpg)
 恭喜完成LINE BOT的建置~
 ## Connect LINE BOT with Raspberry Pi
-### STEP 1 ： 開啟Rpi裡的瀏覽器，搜尋並下載ngrok
+#### STEP 1 ： 開啟Rpi裡的瀏覽器，搜尋並下載ngrok
 ![](https://i.imgur.com/wQViPjR.png)
-### STEP 2 ： 到Downloads資料夾打開ngrok的壓縮檔
+#### STEP 2 ： 到Downloads資料夾打開ngrok的壓縮檔
 ![](https://i.imgur.com/S6eQsFz.png)
-### STEP 3 ： 找到裡面的ngrok執行檔
+#### STEP 3 ： 找到裡面的ngrok執行檔
 ![](https://i.imgur.com/1qI6Bgd.png)
-### STEP 4 ： 複製到與專案資料夾同一層的路徑
+#### STEP 4 ： 複製到與專案資料夾同一層的路徑
 ![](https://i.imgur.com/6Bypb5Q.png)
-### STEP 5 ： 下載LINE官方的Python套件
+#### STEP 5 ： 下載LINE官方的Python套件
 1. 開啟Rpi的terminal
 2. 輸入`sudo pip3 install line-bot-sdk `
 3. 等待安裝程序結束
-### STEP 6 ： 在專案資料夾中新建一個LINE BOT模板的py檔
+#### STEP 6 ： 在專案資料夾中新建一個LINE BOT模板的py檔
 ![](https://i.imgur.com/gecl4qW.png)
 > 注意：記得更改Channel Access token與Channel Secret，且檔名不要取作`linebot.py`
-### STEP 7 ： 啟動ngrok
+#### STEP 7 ： 啟動ngrok
 1. 開啟另一個terminal
 2. 移動至專案資料夾的路徑
 3. 輸入`./ngrok http 80`
 
 ![](https://i.imgur.com/iOO88rT.jpg)
-### STEP 8 ： 執行剛剛建立的模板py檔
+#### STEP 8 ： 執行剛剛建立的模板py檔
 1. 移動至專案資料夾
 2. 執行模板py檔
 3. 輸入密碼
@@ -489,15 +489,15 @@ if __name__ == "__main__":
 ![](https://i.imgur.com/cn6vuK9.png)
 
 
-### STEP 9 : 複製ngrok執行檔第二個Forwarding路徑
+#### STEP 9 : 複製ngrok執行檔第二個Forwarding路徑
 ![](https://i.imgur.com/uRAC4Ry.png)
 
 > 注意：不能使用快捷鍵`ctrl+c`進行複製，這會結束ngrok的執行，因此要採用點擊右鍵，然後選擇Copy的方式複製
-### STEP 10 :  貼上並更新Webhook URL的路徑
+#### STEP 10 :  貼上並更新Webhook URL的路徑
 ![](https://i.imgur.com/jB1SQqI.png)
-### STEP 11 : Verify執行驗證
+#### STEP 11 : Verify執行驗證
 ![](https://i.imgur.com/GuVcPkH.png)
-### STEP 12 : 跟機器人再聊天一次吧
+#### STEP 12 : 跟機器人再聊天一次吧
 ![](https://i.imgur.com/bCseuTM.png)
 
 這樣就完成與Raspberry Pi的串接了，可以因應需求在模板裡做進一步的延伸了~
@@ -594,7 +594,7 @@ if __name__ == "__main__":
     port = int(os.environ.get('PORT', 80))
     app.run(host='0.0.0.0', port=port)
 ```
-## [VIDEO](https://youtu.be/zMhlQMEvxwI)
+### [VIDEO](https://youtu.be/zMhlQMEvxwI)
 ## Demo Video
 * [HX711 NTD50](https://youtu.be/f4cXLr8uTT8)
     * Calculate the number and price of NTD50 
