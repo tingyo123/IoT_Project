@@ -394,16 +394,24 @@ if __name__ == "__main__":
 ```
 ### 模板解釋
 * 13、14行中要改成自己的Channel Access token以及Channel Secret（Channel Access token在Messaging API，Channel Secret在Basic settings）
+
 ![](https://i.imgur.com/u88h2LJ.png)
+
 * 16~26行
 指定在 /callback 通道上接收訊息，方法是 POST而callback()是為了要檢查連線是否正常其中`signature`是LINE官方提供用來檢查該訊息是否透過LINE官方APP傳送而`body`就是用戶傳送的訊息，並且是以JSON的格式傳送
+
 ![](https://i.imgur.com/NNAOc72.png)
+
 * 28~35行
 這邊是用來接收訊息的地方特別注意到第35行的line_bot_api.reply_message()，它是回傳訊息的方法，而我們設定回傳的型態是文字(text)
+
 ![](https://i.imgur.com/f7MBiLP.png)
+
 * 37~40行
 這裡是指定我們的BOT執行的位置是在 `0.0.0.0:80`，接上前面所說的，我們的BOT會接收訊息的位置也就是`0.0.0.0:80/callback`
+
 ![](https://i.imgur.com/8jbPrc3.png)
+
 ### STEP 6 ： 執行test.py檔
 點擊右上角的三角形按鈕
 ![](https://i.imgur.com/BOpFOiY.png)
@@ -413,11 +421,14 @@ if __name__ == "__main__":
 2. 移動路徑到資料夾中
 3. 下`ngrok.exe http 80`指令
 4. 按下enter
+5. 
 ![](https://i.imgur.com/MFHzEMb.png)
+
 5. 開啟另一個cmd
 6. 移動路徑到資料夾中
 7. 下`python test.py`指令
 8. 按下enter
+
 ![](https://i.imgur.com/o4nP0Ho.png)
 
 順利的話，應該會出現下方這兩個cmd畫面
