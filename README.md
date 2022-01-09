@@ -599,8 +599,8 @@ if __name__ == "__main__":
     * Calculate the number and price of NTD1(control by LINE BOT)
     * `linebot_1.py`
 ## Reference
-[HX711 Python Library](https://github.com/tatobari/hx711py)
-[Build a digital Raspberry Pi Scale (with Weight Sensor HX711)](https://tutorials-raspberrypi.com/digital-raspberry-pi-scale-weight-sensor-hx711/)
-[Connecting 4 HX711 to one Raspberry Pi](https://raspberrypi.stackexchange.com/questions/96422/connecting-4-hx711-to-one-raspberry-pi)
-[HX711 with a Four Wire Load Cell and Arduino | Step by Step Guide](https://www.youtube.com/watch?v=sxzoAGf1kOo&t=382s)
+[HX711 Python Library](https://github.com/tatobari/hx711py)\
+[Build a digital Raspberry Pi Scale (with Weight Sensor HX711)](https://tutorials-raspberrypi.com/digital-raspberry-pi-scale-weight-sensor-hx711/)\
+[Connecting 4 HX711 to one Raspberry Pi](https://raspberrypi.stackexchange.com/questions/96422/connecting-4-hx711-to-one-raspberry-pi)\
+[HX711 with a Four Wire Load Cell and Arduino | Step by Step Guide](https://www.youtube.com/watch?v=sxzoAGf1kOo&t=382s)\
 [LINE BOT Tutorial](https://ithelp.ithome.com.tw/users/20122649/ironman/3122)
