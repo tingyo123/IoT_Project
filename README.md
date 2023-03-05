@@ -1,4 +1,4 @@
-# IOT Project — Piggy Banky
+# IoT Project — Piggy Banky
 ![](https://i.imgur.com/WI3YCCB.jpg)
 
 ---
